@@ -1,0 +1,7 @@
+setup.py
+fzysearch/fzysearch.py
+fzysearch.egg-info/PKG-INFO
+fzysearch.egg-info/SOURCES.txt
+fzysearch.egg-info/dependency_links.txt
+fzysearch.egg-info/not-zip-safe
+fzysearch.egg-info/top_level.txt

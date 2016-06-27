@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: fzysearch
+Version: 0.1
+Summary: FuzzyMatches a string to a list and returns objects from the list in order of relevance
+Home-page: http://github.com/ridwanmsharif/fuzzymatch
+Author: Ridwan M. Sharif
+Author-email: ridwanmsharif@hotmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
