@@ -1,8 +1,8 @@
 # Input the two numbers of which the edit distance is to be calculated 
-def levenshtein_distance(word1,word2):
+def levenshtein_distance(first,second):
     
-    columns = len(word1) + 1
-    rows = len(word2) + 1
+    columns = len(first) + 1
+    rows = len(second) + 1
     
     current_row = [0]
     
@@ -23,12 +23,12 @@ def levenshtein_distance(word1,word2):
         for column in xrange(1,columns):
             top_box = previous_row[column]
             left_box = current_row[column - 1]
-            diagnol = previous_row[column - 1]
+            diagonal = previous_row[column - 1]
            
-            if word1[column - 1] != word2[row - 1]:
-                current_row.append(min(top_box,left_box,diagnol) +1) 
+            if first[column - 1] != second[row - 1]:
+                current_row.append(min(top_box,left_box,diagonal) +1) 
             else: 
-                current_row.append(diagnol) 
+                current_row.append(diagonal) 
                         
     return current_row[-1]
     
@@ -68,18 +68,18 @@ def fuzzymatch(input, gallery):
                                 # in the list input
                                 sorting_distance += (float(distance_list[-1] - distance_list[0])/(len(search)-1))
 
-                                # Word_1 the users input 
-                                # Word_2 the words in the list 
+                                # first_word the users input 
+                                # second_word the words in the list 
                                 # both are passed as parameters into the levenshtein distance function
                                 # the function returns the edit distance
-                                # the shortest number of edits required to change Word_2 into Word_1 
+                                # the shortest number of edits required to change second_word  into first_word
                                 # note the function only considers the characters between the first appearence of the first character in the input string 
                                 # and the last character in the input string
                                 # the edit distance will be used to sort the objects in the list based on relevance
                                 # smaller the edit distance number greater the relevance
-                                word_1 = search
-                                word_2 = library[distance_list[0] : distance_list[-1] + 1]
-                                edit_distance += levenshtein_distance(word_1,word_2)
+                                first_word = search
+                                second_word = library[distance_list[0] : distance_list[-1] + 1]
+                                edit_distance += levenshtein_distance(first_word,second_word)
                                 
                                 sorting_distance += edit_distance
                                 
@@ -106,18 +106,18 @@ def fuzzymatch(input, gallery):
                                 # in the list input
                                 sorting_distance += (float(distance_list[-1] - distance_list[0])/(len(search)-1))
 
-                                # Word_1 the users input 
-                                # Word_2 the words in the list 
+                                # first_word the users input 
+                                # second_word the words in the list 
                                 # both are passed as parameters into the levenshtein distance function
                                 # the function returns the edit distance
-                                # the shortest number of edits required to change Word_2 into Word_1 
+                                # the shortest number of edits required to change second_word  into first_word
                                 # note the function only considers the characters between the first appearence of the first character in the input string 
                                 # and the last character in the input string
                                 # the edit distance will be used to sort the objects in the list based on relevance
                                 # smaller the edit distance number greater the relevance
-                                word_1 = search
-                                word_2 = library[distance_list[0] : distance_list[-1] + 1]
-                                edit_distance += levenshtein_distance(word_1,word_2)
+                                first_word = search
+                                second_word = library[distance_list[0] : distance_list[-1] + 1]
+                                edit_distance += levenshtein_distance(first_word,second_word)
                                 
                                 sorting_distance += edit_distance
                                 
