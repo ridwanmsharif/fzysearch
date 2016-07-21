@@ -32,12 +32,12 @@ def fuzzymatch(input, gallery):
                                 # the average distance between adjacent
                                 # characters in the search input as observed
                                 # in the list input
-                                sorting_distance += (float(distance_list[-1] - distance_list[0])/(len(search_input)-1))
+                                sorting_distance += (float(distance_list[-1] - distance_list[0])/(len(search)-1))
 
                                 # Enter Levenshteins code here Ali and use
                                 # these two words as input. Add comment here
                                 # about the algorithm used
-                                word_1 = search_input
+                                word_1 = search
                                 word_2 = library[distance_list[0] : distance_list[-1]]
 
                                 # This block of code first checks if a
@@ -58,12 +58,12 @@ def fuzzymatch(input, gallery):
                                 # the average distance between adjacent
                                 # characters in the search input as observed
                                 # in the list input
-                                sorting_distance += (float(distance_list[-1] - distance_list[0])/(len(search_input)-1))
+                                sorting_distance += (float(distance_list[-1] - distance_list[0])/(len(search)-1))
 
                                 # Enter Levenshteins code here Ali and use
                                 # these two words as input. Add comment here
                                 # about the algorithm used
-                                word_1 = search_input
+                                word_1 = search
                                 word_2 = library[distance_list[0] : distance_list[-1]]
 
                                 # This block of code first checks if a
