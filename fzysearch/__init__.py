@@ -1,4 +1,4 @@
-# Input the two numbers of which the edit distance is to be calculated 
+# Takes in two words and returns the edit distance 
 def levenshtein_distance(first,second):
     
     columns = len(first) + 1
@@ -11,15 +11,19 @@ def levenshtein_distance(first,second):
     for column in xrange(1,columns):
         current_row.append( current_row[column - 1] + 1 ) 
     
-    # The first column in the current row will be the cost of the first column in the previous row    
+    # The first column in the current row will 
+    # be the cost of the first column in the previous row    
     for row in xrange(1,rows):
         previous_row = current_row
         current_row = [previous_row[0] + 1] 
     
-    # The newest index in the current row will be equal to the smallest value + 1 between
-    # the previous index in the same row, the same row in the previous column
+    # The newest index in the current row will
+    # be equal to the smallest value + 1 between
+    # the previous index in the same row, 
+    # the same row in the previous column
     # and the previous column in the previous row  
-    # the edit distance will be the value in the last column of the last row 
+    # the edit distance will be the value in 
+    # the last column of the last row 
         for column in xrange(1,columns):
             top_box = previous_row[column]
             left_box = current_row[column - 1]
@@ -33,8 +37,10 @@ def levenshtein_distance(first,second):
     return current_row[-1]
     
 def fuzzymatch(input, gallery):
-        # This dictionary will hold all the objects in the list input that
-        # returns a successful search Then pair that object with the sorting
+        # This dictionary will hold all the 
+        # objects in the list input that
+        # returns a successful search Then 
+        # pair that object with the sorting
         # distance as its key
         dictionary = {}
 
@@ -70,12 +76,17 @@ def fuzzymatch(input, gallery):
 
                                 # first_word the users input 
                                 # second_word the words in the list 
-                                # both are passed as parameters into the levenshtein distance function
+                                # both are passed as parameters into the 
+                                # levenshtein distance function
                                 # the function returns the edit distance
-                                # the shortest number of edits required to change second_word  into first_word
-                                # note the function only considers the characters between the first appearence of the first character in the input string 
+                                # the shortest number of edits required to 
+                                # change second_word  into first_word
+                                # note the function only considers the characters
+                                # between the first appearence of the first 
+                                # character in the input string 
                                 # and the last character in the input string
-                                # the edit distance will be used to sort the objects in the list based on relevance
+                                # the edit distance will be used to sort the 
+                                # objects in the list based on relevance
                                 # smaller the edit distance number greater the relevance
                                 first_word = search
                                 second_word = library[distance_list[0] : distance_list[-1] + 1]
@@ -108,21 +119,24 @@ def fuzzymatch(input, gallery):
 
                                 # first_word the users input 
                                 # second_word the words in the list 
-                                # both are passed as parameters into the levenshtein distance function
+                                # both are passed as parameters into the 
+                                # levenshtein distance function
                                 # the function returns the edit distance
-                                # the shortest number of edits required to change second_word  into first_word
-                                # note the function only considers the characters between the first appearence of the first character in the input string 
+                                # the shortest number of edits required to 
+                                # change second_word  into first_word
+                                # note the function only considers the characters 
+                                # between the first appearence of the 
+                                # first character in the input string 
                                 # and the last character in the input string
-                                # the edit distance will be used to sort the objects in the list based on relevance
+                                # the edit distance will be used to sort the 
+                                # objects in the list based on relevance
                                 # smaller the edit distance number greater the relevance
                                 first_word = search
                                 second_word = library[distance_list[0] : distance_list[-1] + 1]
                                 edit_distance += levenshtein_distance(first_word,second_word)
                                 
                                 sorting_distance += edit_distance
-                                
-                                #print(sorting_distance)
-
+                    
                                 # This block of code first checks if a
                                 # particular key has already been used. If so,
                                 # then an object is append to the very same
