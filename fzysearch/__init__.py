@@ -93,8 +93,6 @@ def fuzzymatch(input, gallery):
                                 edit_distance += levenshtein_distance(first_word,second_word)
                                 
                                 sorting_distance += edit_distance
-                                
-                                #print(sorting_distance)
 
                                 # This block of code first checks if a
                                 # particular key has already been used. If so,
