@@ -12,10 +12,10 @@ each down for a character specific comparison. If the object completes the crite
 of a successful search, it can be paired with a key and then inserted into the 
 dictionary. For a successful search, ALL of the following must be true for the given 
 object: 
-..* It must contain equal or more number of characters than that of the searched string.
-..* It must contain every character in the searched string (Including spaces and special 
+⋅⋅* It must contain equal or more number of characters than that of the searched string.
+⋅⋅* It must contain every character in the searched string (Including spaces and special 
 	characters) 
-..* The characters in the searched input must appear in the very same 
+⋅⋅* The characters in the searched input must appear in the very same 
 	succession in the object (Other characters/letters may come in between as long as 
 	all letters are present in the right order)
 
